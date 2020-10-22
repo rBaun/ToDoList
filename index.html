@@ -1,26 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>To Do List</title>
+    <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="assets/css/todos.css">
-    <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-    <div id="container">
-        <h1>To-do List</h1>
-        <input type="text">
-        <ul>
-            <li><span>X</span> Item #1</li>
-            <li><span>X</span> Item #2</li>
-            <li><span>X</span> Item #3</li>
-            <li><span>X</span> Item #4</li>
-            <li><span>X</span> Item #5</li>
-        </ul>
-    </div>
 
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="todoList notCompleted">
+                    <h1>What Should I Do Today?</h1>
+                    <input type="text" class="form-control addToDoItem" placeholder="Add an Item to the List...">
+                    <button id="completeAllItems" class="btn btn-success">Check All Items</button>
+
+                    <hr>
+                    <ul id="sortable" class="list-unstyled">
+                        <li class="ui-state-default">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">Buy Groceries
+                                </label>
+                            </div>
+                        </li>
+                        <li class="ui-state-default">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">Cook Dinner
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="todo-footer">
+                        <strong><span class="count-todos"></span></strong> Items Left to Complete!
+                    </div>
+                </div>
+            </div> <!-- END OF NOT COMPLETED ITEMS -->
+            <div class="col-md-6">
+                <div class="todoList">
+                    <h1>What Have I Done Today?</h1>
+                    <ul id="completedItems" class="list-unstyled">
+                        <li>
+                            <button class="removeItem btn btn-warning btn-xs pull-right">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- END OF COMPLETED ITEMS -->
+        </div> <!-- END OF ROW -->
+    </div> <!-- END OF CONTAINER-->
+
+    <!-- Custom Javascript -->
     <script src="assets/js/todos.js"></script>
+    <!-- jQuery, Popper.js & Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
